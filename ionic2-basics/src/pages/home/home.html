@@ -8,4 +8,32 @@
 
 <ion-content padding>
 <button ion-button (click)="openUsers()">Users</button>
+  {{showPassword}}
+  {{passwordBackup}}
+  <div>
+    <ion-list>
+      <ion-grid>
+        <ion-row>
+            <ion-col col-8>
+              <ion-item>
+              <ion-input #protectPass *ngIf="showPassword" [(ngModel)]="passwordBackup" type="text" placeholder="Constraseña" (ionBlur)="nothing()">
+              </ion-input>
+                <ion-input #protectPass *ngIf="!showPassword" [(ngModel)]="passwordBackup" type="password" placeholder="Constraseña2" >
+                </ion-input>
+              </ion-item>
+            </ion-col>
+          <ion-col col-4>
+            <button  *ngIf="showPassword" ion-button (click)="nothing()" (ionBlur)="do" >
+              <label> Ocultar</label>
+            </button>
+            <button  *ngIf="!showPassword" ion-button (click)="nothing()" >
+              <label> Mostrar</label>
+            </button>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+  </div>
+
 </ion-content>
