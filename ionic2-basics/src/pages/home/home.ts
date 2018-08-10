@@ -32,62 +32,11 @@ export class HomePage {
     this.navCtrl.push(UsersPage);
   }
 
-  public togglePassword(flag?: boolean) {
-
-
-    if (this.showPassword) {
-      this.passwordLabel = "Mostrar";
-      this.passwordType = "password";
-    }
-    else {
-      this.passwordLabel = "Ocultar";
-      this.passwordType = "text";
-      // this.protectPass.setFocus();
-    }
-    /*  if (flag){
-        this.passwordLabel = "Mostrar";
-        this.passwordType = "password";
-        this.showPassword = false;
-        console.log("inside flag");
-      }*/
-    this.showPassword = !this.showPassword;
-    console.log(this.showPassword, " toggle")
-  }
-
-  public hide() {
-    console.log(this.showPassword,'-----hideee');
-    console.log("hide");
-    this.showPassword = !this.showPassword;
-    this.passwordLabel = "Mostrar";
-    this.passwordType = "password";
-    this.protectPass.setFocus();
-  }
-
-  public show() {
-
-    console.log("show");
-    this.showPassword = !this.showPassword;
-    this.passwordLabel = "Ocultar";
-    this.passwordType = "text";
-   // this.protectPass.setFocus();
-   // setTimeout(() => {
-      //this.protectPass.setFocus();
-      //  this.showPassword=false;
-      // this.passwordLabel = "Mostrar";
-      // this.passwordType = "password";
-   // }, 150);
-
-  }
-  public do(){
-    console.log("------do");
-  }
 
   public nothing(){
     setTimeout(() => {
       this.protectPass.setFocus();
     }, 150);
-
-    console.log("nothing");
     this.showPassword = !this.showPassword;
     if (this.showPassword) {
       this.passwordLabel ="Ocultar"
@@ -97,7 +46,4 @@ export class HomePage {
 
     }
   }
-  public asdf(){
-  console.log("------else");
-}
 }
